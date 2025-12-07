@@ -19,6 +19,11 @@ public abstract class Puzzle {
         }
     }
 
+    public Puzzle(List<String> input) {
+        inputFilePath = "TEST_INPUT";
+        this.input = input;
+    }
+
     public abstract Object solvePart1();
 
     public abstract Object solvePart2();
@@ -28,8 +33,8 @@ public abstract class Puzzle {
         var result = solver.get();
         double duration = (System.nanoTime() - startTime) / 1_000_000.0;
 
-        System.out.printf("%s : %s", label, result.toString());
-        System.out.printf("Time: %.2f", duration);
+        System.out.printf("%s : %s\n", label, result.toString());
+        System.out.printf("Time: %.2f ms\n", duration);
     }
 
     public void solve() {
